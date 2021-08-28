@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# random
+# depoly defi and 
 time=`date +%s`
 
 # publisher/contract
