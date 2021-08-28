@@ -1,0 +1,1 @@
+{"rustc":17807758859236181817,"features":"[]","target":8157193668724638014,"profile":13719610756125836611,"path":3740798977796844958,"deps":[],"local":[{"CheckDepInfo":{"dep_info":"debug/.fingerprint/cpuid-bool-464b343952c951fe/dep-lib-cpuid-bool"}}],"rustflags":["-C","link-args=-s"],"metadata":14741676013330134232,"config":0,"compile_kind":0}

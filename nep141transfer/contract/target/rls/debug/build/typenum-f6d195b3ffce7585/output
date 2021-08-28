@@ -1,0 +1,2 @@
+cargo:rustc-env=TYPENUM_BUILD_CONSTS=/home/git/for_nep141/nep141transfer/contract/target/rls/debug/build/typenum-f6d195b3ffce7585/out/consts.rs
+cargo:rustc-env=TYPENUM_BUILD_OP=/home/git/for_nep141/nep141transfer/contract/target/rls/debug/build/typenum-f6d195b3ffce7585/out/op.rs
