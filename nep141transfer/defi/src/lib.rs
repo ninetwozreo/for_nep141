@@ -95,24 +95,14 @@ impl DeFi {
     pub fn transfer(&mut self, receiver_id: ValidAccountId, amount: U128, fungible_token_account_id: ValidAccountId) {
         ext_transfer::register_account(env::predecessor_account_id(), &fungible_token_account_id, u128::from(amount), env::prepaid_gas() / 4).then(
             ext_transfer::ft_transfer_call(
-                env::current_account_id(),
+                receiver_id.to_string(),
                 amount,
                 Option::None,
                 "".to_string(),
                 &fungible_token_account_id,
                 1 as u128,
                 env::prepaid_gas() / 4
-            ).then(
-                ext_transfer::ft_transfer_call(
-                    receiver_id.to_string(),
-                    amount,
-                    Option::None,
-                    "".to_string(),
-                    &fungible_token_account_id,
-                    1 as u128,
-                    env::prepaid_gas() / 4
-                ),
-            )
+            ),
         );
     }
 }

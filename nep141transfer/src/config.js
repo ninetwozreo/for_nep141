@@ -1,4 +1,4 @@
-const CONTRACT_NAME = process.env.VUE_APP_CONTRACT_NAME ||'nep141-payment'
+const CONTRACT_NAME = "defi-1018.bhc.testnet"||'nep141-payment'
 
 function getConfig(env) {
   switch (env) {
