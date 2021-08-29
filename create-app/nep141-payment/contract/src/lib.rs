@@ -24,7 +24,7 @@ const MAX_TOKEN_NUM: u128 = 20;
 pub struct DeFi {
     fungible_token_account_id: AccountId,
     tokens: LookupMap<ValidAccountId, u128>,
-    token_list: Vec<ValidAccountId>
+    token_count: u128
 }
 
 // Defining cross-contract interface. This allows to create a new promise.
@@ -54,7 +54,6 @@ impl DeFi {
         assert!(!self.tokens.contains_key(&fungible_token_account_id), "token already added!");
         let token_count = self.token_count + 1;
         assert!(token_count <= MAX_TOKEN_NUM, "token count exceeds");
-        // assert!(!self.tokens.(&fungible_token_account_id), "token already added!");
         self.tokens.insert(
             &fungible_token_account_id,
             &1,
@@ -66,13 +65,6 @@ impl DeFi {
     pub fn is_valid(&self,fungible_token_account_id: ValidAccountId) ->bool {
         // assert!(!env::state_exists(), "Already initialized");
         self.tokens.contains_key(&fungible_token_account_id)
-        // Self { fungible_token_account_id: fungible_token_account_id.into(),tokens: LookupMap::new(b"tokens".to_vec()), }
-    }
-
-    pub fn list( self) ->LookupMap<ValidAccountId,u128> {
-        // assert!(!env::state_exists(), "Already initialized");
-        // self.tokens.contains_key(&fungible_token_account_id)
-        self.tokens
         // Self { fungible_token_account_id: fungible_token_account_id.into(),tokens: LookupMap::new(b"tokens".to_vec()), }
     }
 }
