@@ -47,7 +47,7 @@ impl DeFi {
 
     pub fn add(&mut self,fungible_token_account_id: ValidAccountId) {
         assert!(!self.tokens.contains_key(&fungible_token_account_id), "token already added!");
-        assert!(!self.tokens.(&fungible_token_account_id), "token already added!");
+        // assert!(!self.tokens.(&fungible_token_account_id), "token already added!");
         self.tokens.insert(
             &fungible_token_account_id,
             &1,
@@ -58,6 +58,13 @@ impl DeFi {
     pub fn is_valid(&mut self,fungible_token_account_id: ValidAccountId) ->bool {
         // assert!(!env::state_exists(), "Already initialized");
         self.tokens.contains_key(&fungible_token_account_id)
+        // Self { fungible_token_account_id: fungible_token_account_id.into(),tokens: LookupMap::new(b"tokens".to_vec()), }
+    }
+
+    pub fn list( self) ->LookupMap<ValidAccountId,u128> {
+        // assert!(!env::state_exists(), "Already initialized");
+        // self.tokens.contains_key(&fungible_token_account_id)
+        self.tokens
         // Self { fungible_token_account_id: fungible_token_account_id.into(),tokens: LookupMap::new(b"tokens".to_vec()), }
     }
 }
