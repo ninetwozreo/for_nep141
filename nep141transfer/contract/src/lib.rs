@@ -92,6 +92,10 @@ impl Contract {
             .storage_deposit(Some(account.as_str().try_into().unwrap()), None);
     }
 
+    pub fn deposit(&mut self, account: AccountId) {
+        self.token.internal_deposit(&account.to_string(), env::attached_deposit());
+    }
+
     fn on_tokens_burned(&mut self, account_id: AccountId, amount: Balance) {
         log!("Account @{} burned {}", account_id, amount);
     }

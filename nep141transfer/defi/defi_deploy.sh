@@ -6,10 +6,10 @@ time=`date +%s`
 # publisher/contract
 # contract_name=$1
 publisher=$1
-default_publisher='shark.testnet'
+default_publisher='bhc.testnet'
 publisher=${publisher:-$default_publisher}
 
-contract_id="defi-1003.$publisher"
+contract_id="defi-1019.$publisher"
 ftcontract_id="fttest-1005.$publisher"
 pwd_path=`pwd`
 
